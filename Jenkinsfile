@@ -1,9 +1,12 @@
 pipeline {
-    stage("test") {
-        steps {
-            script {
-                println("hello world")
+    stages {
+        stage("test") {
+            steps {
+                script {
+                    println("hello world")
+                }
             }
         }
     }
+
 }
