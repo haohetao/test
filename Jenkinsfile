@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label none
+        label 'master'
     }
     stages {
         stage("test") {
@@ -11,5 +11,4 @@ pipeline {
             }
         }
     }
-
 }
