@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     println("hello world4")
-                    sh 'env1'
+                    sh 'env'
                 }
             }
         }
