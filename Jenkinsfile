@@ -6,7 +6,7 @@ pipeline {
         stage("test") {
             steps {
                 script {
-                    println("hello world1")
+                    println("hello world2")
                 }
             }
         }
