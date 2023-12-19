@@ -7,7 +7,7 @@ pipeline {
             steps {
                 script {
                     println("hello world3")
-                    emailext body: 'Test Message', subject: 'Test Subject', recipientProviders: [developers(), requestor()]
+                    emailext body: 'hello world3', subject: 'test build', recipientProviders: [developers(), requestor()]
                 }
             }
         }
