@@ -10,6 +10,7 @@ pipeline {
     }
     stages {
         stage("test") {
+            options { retry(3) }
             steps {
                 script {
                     println("hello world4")
