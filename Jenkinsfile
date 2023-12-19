@@ -1,15 +1,17 @@
 pipeline {
-    agent {
-        label 'master'
-    }
+    agent any
     stages {
         stage("test") {
             steps {
                 script {
                     println("hello world4")
-                    emailext body: 'hello world4', subject: 'test build', recipientProviders: [developers(), requestor()]
                 }
             }
+        }
+    }
+    post {
+        always {
+            emailext recipientProviders: [developers(), requestor()]
         }
     }
 }
