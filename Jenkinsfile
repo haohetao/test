@@ -1,3 +1,6 @@
+readYaml(file: "pipeline-env.yaml").each {
+    key, value -> env[key] = value
+}
 pipeline {
     agent any
     options { timestamps() }
@@ -27,11 +30,6 @@ pipeline {
         }
         stage('env') {
             steps {
-                script {
-                    readYaml(file: "pipeline-env.yaml").each {
-                        key, value -> env[key] = value
-                    }
-                }
                 echo "${env.test}"
             }
         }
