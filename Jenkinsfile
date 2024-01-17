@@ -3,9 +3,8 @@ def readEnv() {
         key, value -> env[key] = value
     }
 }
-node('master') {
+node() {
     readEnv()
-    echo "${test}"
 }
 pipeline {
     agent any
