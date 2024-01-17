@@ -3,7 +3,7 @@ def readEnv() {
         key, value -> env[key] = value
     }
 }
-node() {
+node('master') {
     readEnv()
     echo "${test}"
 }
