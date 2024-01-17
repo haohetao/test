@@ -27,7 +27,11 @@ pipeline {
         }
         stage('env') {
             steps {
-                readYaml(file: "pipeline-env.yaml").each {key, value -> env[key] = value }
+                script {
+                    readYaml(file: "pipeline-env.yaml").each {
+                        key, value -> env[key] = value
+                    }
+                }
                 echo "${env.test}"
             }
         }
