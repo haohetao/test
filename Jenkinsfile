@@ -1,4 +1,3 @@
-load pipelineEnv = 'pipeline-env.groovy'
 pipeline {
     agent any
     options { timestamps() }
@@ -28,6 +27,7 @@ pipeline {
         }
         stage('env') {
             steps {
+                load pipelineEnv = 'pipeline-env.groovy'
                 echo "${pipelineEnv.test}"
             }
         }
