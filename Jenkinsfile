@@ -1,4 +1,5 @@
-readYaml(file: "pipeline-env.yaml").each {
+def readEnv() {
+    readYaml(file: "pipeline-env.yaml").each {
     key, value -> env[key] = value
 }
 pipeline {
@@ -30,6 +31,7 @@ pipeline {
         }
         stage('env') {
             steps {
+                readEnv
                 echo "${env.test}"
             }
         }
