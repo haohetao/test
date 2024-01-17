@@ -27,8 +27,8 @@ pipeline {
         }
         stage('env') {
             steps {
-                load pipelineEnv = 'pipeline-env.groovy'
-                echo "${pipelineEnv.test}"
+                readYaml(file: pipeline-env.yaml).each {key, value -> env[key] = value }
+                echo "${env.test}"
             }
         }
     }
