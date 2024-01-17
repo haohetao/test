@@ -4,7 +4,7 @@ def readEnv() {
     }
 }
 node() {
-    readEnv()
+    //readEnv()
 }
 pipeline {
     agent any
@@ -35,7 +35,7 @@ pipeline {
         }
         stage('env') {
             steps {
-                //readEnv()
+                readEnv()
                 echo "${test}"
             }
         }
