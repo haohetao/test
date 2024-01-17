@@ -3,7 +3,9 @@ def readEnv() {
         key, value -> env[key] = value
     }
 }
-readEnv()
+script {
+    readEnv()
+}
 pipeline {
     agent any
     options { timestamps() }
