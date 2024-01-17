@@ -36,7 +36,6 @@ pipeline {
         }
         stage('env') {
             steps {
-                readEnv()
                 echo "${test}"
             }
         }
