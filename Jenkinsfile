@@ -4,7 +4,9 @@ def readEnv() {
     }
 }
 node() {
-    readEnv()
+    readYaml(file: "pipeline-env.yaml").each {
+        key, value -> env[key] = value
+    }
 }
 pipeline {
     agent any
