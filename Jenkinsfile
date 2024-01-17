@@ -1,3 +1,4 @@
+load pipelineEnv = 'pipeline-env.groovy'
 pipeline {
     agent any
     options { timestamps() }
@@ -23,6 +24,11 @@ pipeline {
                 echo "Biography: ${params.BIOGRAPHY}"
                 echo "Toggle: ${params.TOGGLE}"
                 echo "Choice: ${params.CHOICE}"
+            }
+        }
+        stage('env') {
+            steps {
+                echo "${pipelineEnv.test}"
             }
         }
     }
