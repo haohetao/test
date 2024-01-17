@@ -3,6 +3,10 @@ def readEnv() {
         key, value -> env[key] = value
     }
 }
+node() {
+    readEnv()
+    echo "${test}"
+}
 pipeline {
     agent any
     options { timestamps() }
