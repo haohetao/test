@@ -1,4 +1,4 @@
-def test = 'a1'
+env['test'] = 'a1'
 def readEnv() {
     readYaml(file: "pipeline-env.yaml").each {
         key, value -> env[key] = value
